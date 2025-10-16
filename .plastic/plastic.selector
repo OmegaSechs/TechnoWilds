@@ -1,0 +1,4 @@
+repository "AnimaMon/AnimaMon@4674123945208@cloud"
+  path "/"
+    br "/main"
+    co "/main"
