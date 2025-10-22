@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b020b53658362234d9e814795f818f6f, type: 3}
+  m_Name: Habilidade_Raio_Energia
+  m_EditorClassIdentifier: Assembly-CSharp::AttackData
+  attackName: Raio de Energia
+  description: "O usu\xE1rio acumula energia e dispara um feixe de luz que causa
+    dano elevado ao advers\xE1rio."
+  damage: 25
+  spCost: 10
