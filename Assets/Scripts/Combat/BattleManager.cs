@@ -1,18 +1,27 @@
 using UnityEngine;
 using System.Collections; 
+using System.Collections.Generic;
 using TMPro; 
 
 public class BattleManager : MonoBehaviour
 {
+    [Header("Referências Lógicas")]
     public Creature playerCreature;
     public Creature enemyCreature;
+    
+    [Header("Dados das Criaturas (Arraste os ScriptableObjects aqui)")]
+    public List<AttackData> playerAttacks;
+    public List<AttackData> enemyAttacks;
 
+    [Header("Referências de UI (Controladores)")]
+    public BattleUIManager uiManager; 
     public BattleHUD jogadorHUD;
     public BattleHUD inimigoHUD;
     public TextMeshProUGUI logTexto;
 
-    public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
+    [Header("Estado da Batalha")]
     public BattleState state;
+    public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
     void Start()
     {
@@ -22,8 +31,8 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        playerCreature = new FireCreature("Pyro", 100, 100, 5); 
-        enemyCreature = new FireCreature("Inferno", 100, 100,5);
+        playerCreature = new FireCreature("Pyro", 100, 50, 10, 5, playerAttacks);
+        enemyCreature = new FireCreature("Inferno", 100, 50, 10, 5, enemyAttacks);
 
         logTexto.text = $"Um {enemyCreature.Name} selvagem apareceu!";
 
@@ -36,29 +45,29 @@ public class BattleManager : MonoBehaviour
         PlayerTurn();
     }
 
+
     void PlayerTurn()
     {
         logTexto.text = "Sua vez! O que fazer?";
+        uiManager.ShowMainActionPanel(); 
     }
-
-    public void OnAttackButton()
+    public void OnPlayerAttack(AttackData selectedAttack)
     {
         if (state != BattleState.PLAYERTURN)
-            return;
+            return; 
 
-        StartCoroutine(PlayerAttack());
+        uiManager.HideAllActionPanels();
+        StartCoroutine(PlayerAttackCoroutine(selectedAttack));
     }
 
-    IEnumerator PlayerAttack()
+    IEnumerator PlayerAttackCoroutine(AttackData selectedAttack)
     {
-        // Lógica de ataque
-        playerCreature.AttackTarget(enemyCreature);
+        playerCreature.AttackTarget(enemyCreature, selectedAttack);
         
-        // Atualiza a UI do inimigo
         inimigoHUD.SetHP(enemyCreature.CurrentHP);
-        logTexto.text = $"{playerCreature.Name} ataca!";
+        logTexto.text = $"{playerCreature.Name} usou {selectedAttack.attackName}!";
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f); 
 
         if (enemyCreature.CurrentHP <= 0)
         {
@@ -74,13 +83,22 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator EnemyTurn()
     {
-        logTexto.text = $"{enemyCreature.Name} ataca de volta!";
-        yield return new WaitForSeconds(1f);
+        logTexto.text = $"{enemyCreature.Name} prepara um ataque...";
+        yield return new WaitForSeconds(1.5f);
 
-        enemyCreature.AttackTarget(playerCreature);
-        jogadorHUD.SetHP(playerCreature.CurrentHP);
+        if (enemyCreature.Attacks.Count > 0)
+        {
+            AttackData enemyAttack = enemyCreature.Attacks[0];
+            enemyCreature.AttackTarget(playerCreature, enemyAttack);
+            jogadorHUD.SetHP(playerCreature.CurrentHP);
+            logTexto.text = $"{enemyCreature.Name} usou {enemyAttack.attackName}!";
+        }
+        else
+        {
+            logTexto.text = $"{enemyCreature.Name} não tem ataques!";
+        }
         
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         
         if (playerCreature.CurrentHP <= 0)
         {
@@ -96,6 +114,8 @@ public class BattleManager : MonoBehaviour
 
     void EndBattle()
     {
+        uiManager.HideAllActionPanels(); 
+
         if (state == BattleState.WON)
         {
             logTexto.text = "Você venceu a batalha!";

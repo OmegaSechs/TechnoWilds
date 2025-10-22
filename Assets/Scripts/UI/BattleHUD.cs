@@ -4,30 +4,45 @@ using TMPro;
 
 public class BattleHUD : MonoBehaviour
 {
+    // Deixe as referências públicas para que possamos arrastá-las no Inspector
+    
     public TextMeshProUGUI nomeTexto;
     public TextMeshProUGUI nivelTexto;
     public Slider hpSlider;
+    public Slider spSlider; 
 
-    //Método chamado no início da batalha para configurar o HUD com os dados do BioMon
+    // Este método é chamado no início da batalha para configurar o HUD
     public void SetHUD(Creature creature)
     {
-        nomeTexto.text = creature.Name;
-        nivelTexto.text = "Lv. " + creature.Level;
         
-        hpSlider.maxValue = creature.MaxHP; 
-        hpSlider.value = creature.CurrentHP; 
-    }
-    // Método para atualizar a barra de HP durante a batalha    
-    public void SetHP(int hp)
-    {
-        hpSlider.value = hp;
+        if (nomeTexto != null)
+            nomeTexto.text = creature.Name;
+
+        if (nivelTexto != null)
+            nivelTexto.text = "Lv. " + creature.Level;
+
+        if (hpSlider != null)
+        {
+            hpSlider.maxValue = creature.MaxHP;
+            hpSlider.value = creature.CurrentHP;
+        }
+
+        if (spSlider != null)
+        {
+            spSlider.maxValue = creature.MaxSP; 
+            spSlider.value = creature.CurrentSP;
+        }
     }
 
-    /*
-    // Método para atualizar a barra de SP/Mana no futuro, se fromos fazer 
+    public void SetHP(int hp)
+    {
+        if (hpSlider != null)
+            hpSlider.value = hp;
+    }
+
     public void SetSP(int sp)
     {
-        spSlider.value = sp;
+        if (spSlider != null)
+            spSlider.value = sp;
     }
-    */
 }

@@ -1,14 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FireCreature : Creature
 {
-     public FireCreature(string name, int hp, int attack, int level) : base(name, hp, attack, level) {}
-
-    public override void AttackTarget(Creature target)
-    {
-        int damage = Attack;
-        target.TakeDamage(damage);
-        Debug.Log($"{Name} atacou {target.Name} causando {damage} de dano!");
+     public FireCreature(string name, int maxHp, int maxSp, int attack, int level, List<AttackData> attacks) : base(name, maxHp, maxSp, attack, level)
+        {
+            this.Attacks = attacks;
     }
 }
 
