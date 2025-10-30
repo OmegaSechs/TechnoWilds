@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections; 
-using System.Collections.Generic;
-using TMPro; 
+using System.Collections.Generic; // Necessário para List<>
+using TMPro; // Necessário para TextMeshPro
 
 public class BattleManager : MonoBehaviour
 {
@@ -9,15 +9,18 @@ public class BattleManager : MonoBehaviour
     public Creature playerCreature;
     public Creature enemyCreature;
     
-    [Header("Dados das Criaturas (Arraste os ScriptableObjects aqui)")]
-    public List<AttackData> playerAttacks;
-    public List<AttackData> enemyAttacks;
+    // As listas de ataque "playerAttacks" e "enemyAttacks" foram REMOVIDAS
+    // pois agora lemos elas de dentro do CreatureData
 
     [Header("Referências de UI (Controladores)")]
     public BattleUIManager uiManager; 
     public BattleHUD jogadorHUD;
     public BattleHUD inimigoHUD;
     public TextMeshProUGUI logTexto;
+    
+    [Header("Pontos de Spawn")]
+    public Transform playerSpawnPoint; // Onde o monstro do jogador aparece
+    public Transform enemySpawnPoint;  // Onde o monstro inimigo aparece
 
     [Header("Estado da Batalha")]
     public BattleState state;
@@ -31,44 +34,89 @@ public class BattleManager : MonoBehaviour
 
     IEnumerator SetupBattle()
     {
-        playerCreature = new FireCreature("Pyro", 100, 50, 10, 5, playerAttacks);
-        enemyCreature = new FireCreature("Inferno", 100, 50, 10, 5, enemyAttacks);
+        // --- ETAPA 1: LER OS DADOS DO GAMEMANAGER ---
+        // Pega os "moldes" (ScriptableObjects) que o GameManager transportou
+        CreatureData playerData = GameManager.Instance.playerCreatureData;
+        CreatureData enemyData = GameManager.Instance.enemyCreatureData;
 
+        // --- ETAPA 2: INSTANCIAR (CRIAR) OS VISUAIS ---
+        // Cria os prefabs visuais nos locais de spawn
+        if (playerData.battlePrefab != null)
+        {
+            Instantiate(playerData.battlePrefab, playerSpawnPoint);
+        }
+        if (enemyData.battlePrefab != null)
+        {
+            Instantiate(enemyData.battlePrefab, enemySpawnPoint);
+        }
+
+        // --- ETAPA 3: CRIAR AS CRIATURAS LÓGICAS ---
+        // Cria as instâncias "vivas" das criaturas para a batalha
+        // (Nome, MaxHP, MaxSP, AttackBase, Level, ListaDeAtaques)
+        playerCreature = new FireCreature(playerData.creatureName, playerData.maxHealth, playerData.maxSP, playerData.baseAttack, playerData.baseLevel, playerData.attacks);
+        
+        // TODO: Criar uma classe base "EnemyCreature" ou classes específicas
+        // Por enquanto, usamos FireCreature para ambos para testar
+        enemyCreature = new FireCreature(enemyData.creatureName, enemyData.maxHealth, enemyData.maxSP, enemyData.baseAttack, enemyData.baseLevel, enemyData.attacks);
+
+        // --- ETAPA 4: CONFIGURAR A UI INICIAL ---
         logTexto.text = $"Um {enemyCreature.Name} selvagem apareceu!";
 
         jogadorHUD.SetHUD(playerCreature);
         inimigoHUD.SetHUD(enemyCreature);
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f); // Pausa para o jogador ler
 
+        // --- ETAPA 5: INICIAR O PRIMEIRO TURNO ---
         state = BattleState.PLAYERTURN;
         PlayerTurn();
     }
 
+    // --- Gerenciamento de Turnos ---
 
     void PlayerTurn()
     {
         logTexto.text = "Sua vez! O que fazer?";
+        // Avisa o UIManager para mostrar o menu principal
         uiManager.ShowMainActionPanel(); 
     }
+
+    // Esta função é PÚBLICA e é chamada pelo UIManager (quando o jogador clica num ataque)
     public void OnPlayerAttack(AttackData selectedAttack)
     {
         if (state != BattleState.PLAYERTURN)
-            return; 
+            return; // Garante que o jogador só ataque no seu turno
 
+        // Esconde os menus de ação assim que o ataque é escolhido
         uiManager.HideAllActionPanels();
+        
+        // Inicia a rotina de ataque
         StartCoroutine(PlayerAttackCoroutine(selectedAttack));
     }
 
+    // Esta é a rotina PRIVADA que executa o ataque do jogador
     IEnumerator PlayerAttackCoroutine(AttackData selectedAttack)
     {
+        // Verifica se o jogador tem SP suficiente
+        if (playerCreature.CurrentSP < selectedAttack.spCost)
+        {
+            logTexto.text = "SP insuficiente!";
+            yield return new WaitForSeconds(1.5f);
+            PlayerTurn(); // Devolve o turno ao jogador
+            yield break; // Para a execução desta rotina
+        }
+        
+        // Lógica de ataque
         playerCreature.AttackTarget(enemyCreature, selectedAttack);
         
+        // Atualiza os HUDs
         inimigoHUD.SetHP(enemyCreature.CurrentHP);
+        jogadorHUD.SetSP(playerCreature.CurrentSP); // Atualiza o SP do jogador
         logTexto.text = $"{playerCreature.Name} usou {selectedAttack.attackName}!";
 
-        yield return new WaitForSeconds(1.5f); 
+        yield return new WaitForSeconds(1.5f); // Tempo para o jogador ler
 
+        // Verifica se o inimigo morreu
         if (enemyCreature.CurrentHP <= 0)
         {
             state = BattleState.WON;
@@ -76,26 +124,41 @@ public class BattleManager : MonoBehaviour
         }
         else
         {
+            // Passa o turno para o inimigo
             state = BattleState.ENEMYTURN;
             StartCoroutine(EnemyTurn());
         }
     }
 
+    // A rotina de ataque do inimigo
     IEnumerator EnemyTurn()
     {
         logTexto.text = $"{enemyCreature.Name} prepara um ataque...";
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.5f); // Tempo para o inimigo "pensar"
 
+        // --- Lógica de IA (Inteligência Artificial) Simples ---
         if (enemyCreature.Attacks.Count > 0)
         {
-            AttackData enemyAttack = enemyCreature.Attacks[0];
-            enemyCreature.AttackTarget(playerCreature, enemyAttack);
-            jogadorHUD.SetHP(playerCreature.CurrentHP);
-            logTexto.text = $"{enemyCreature.Name} usou {enemyAttack.attackName}!";
+            // IA simples: escolhe um ataque aleatório
+            int attackIndex = Random.Range(0, enemyCreature.Attacks.Count);
+            AttackData enemyAttack = enemyCreature.Attacks[attackIndex];
+
+            // Verifica se o inimigo tem SP para este ataque
+            if (enemyCreature.CurrentSP >= enemyAttack.spCost)
+            {
+                enemyCreature.AttackTarget(playerCreature, enemyAttack);
+                jogadorHUD.SetHP(playerCreature.CurrentHP);
+                inimigoHUD.SetSP(enemyCreature.CurrentSP); // Atualiza SP do inimigo
+                logTexto.text = $"{enemyCreature.Name} usou {enemyAttack.attackName}!";
+            }
+            else
+            {
+                logTexto.text = $"{enemyCreature.Name} não tem SP!";
+            }
         }
         else
         {
-            logTexto.text = $"{enemyCreature.Name} não tem ataques!";
+            logTexto.text = $"{enemyCreature.Name} não sabe nenhum ataque!";
         }
         
         yield return new WaitForSeconds(1.5f);
@@ -119,6 +182,8 @@ public class BattleManager : MonoBehaviour
         if (state == BattleState.WON)
         {
             logTexto.text = "Você venceu a batalha!";
+
+            // StartCoroutine(ReturnToMap());
         }
         else if (state == BattleState.LOST)
         {
