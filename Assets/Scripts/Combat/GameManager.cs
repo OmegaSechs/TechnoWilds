@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
         playerCreatureData = player;
         enemyCreatureData = enemy;
         
-        SceneManager.LoadScene("Battle"); 
+        // Carrega a cena de batalha substituindo a cena atual
+        SceneManager.LoadScene("Battle", LoadSceneMode.Single);
     }
 }

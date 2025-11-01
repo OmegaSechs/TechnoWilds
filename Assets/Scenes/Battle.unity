@@ -144,7 +144,7 @@ Transform:
   m_GameObject: {fileID: 465729179}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 431, y: 330, z: 0}
+  m_LocalPosition: {x: 1, y: 70, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -186,7 +186,91 @@ Transform:
   m_GameObject: {fileID: 742330004}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1374, y: 669, z: 0}
+  m_LocalPosition: {x: 101, y: 20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1174314396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1174314398}
+  - component: {fileID: 1174314397}
+  m_Layer: 0
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1174314397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174314396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.Light2D
+  m_ComponentVersion: 2
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_LightVolumeIntensity: 1
+  m_LightVolumeEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowsEnabled: 1
+  m_ShadowIntensity: 0.75
+  m_ShadowSoftness: 0.3
+  m_ShadowSoftnessFalloffIntensity: 0.5
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &1174314398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174314396}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 578.39374, y: 322.41037, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -315,9 +399,12 @@ MonoBehaviour:
   jogadorHUD: {fileID: 320062922935111065}
   inimigoHUD: {fileID: 6475731322055669188}
   logTexto: {fileID: 1655932422}
-  playerSpawnPoint: {fileID: 0}
-  enemySpawnPoint: {fileID: 0}
+  playerSpawnPoint: {fileID: 465729180}
+  enemySpawnPoint: {fileID: 742330005}
   state: 0
+  usarDadosDeTeste: 0
+  playerDataTeste: {fileID: 11400000, guid: d65d0a3eeaba26c408f2985cb6f79536, type: 2}
+  enemyDataTeste: {fileID: 11400000, guid: 1a6dfaae38b482340bebf4de2028feb7, type: 2}
 --- !u!4 &1949652733
 Transform:
   m_ObjectHideFlags: 0
@@ -507,8 +594,8 @@ MonoBehaviour:
   botaoItens: {fileID: 2781135435972835965}
   botaoFugir: {fileID: 6475885095718831873}
   botaoVoltar_Ataques: {fileID: 550150434}
-  attackButtonPrefab: {fileID: 276551867189366181}
-  attackButtonParent: {fileID: 0}
+  attackButtonPrefab: {fileID: 8298648137338884997, guid: 135749fe00f68ce48986b0e6aa6f1e47, type: 3}
+  attackButtonParent: {fileID: 7682686161863097561}
 --- !u!4 &2061668952
 Transform:
   m_ObjectHideFlags: 0
@@ -524,11 +611,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &276551867189366181 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6565424245909359308, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
-  m_PrefabInstance: {fileID: 3895784985882289923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &320062922935111065 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8497822004742977566, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
@@ -606,6 +688,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1854681799088127446, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
+      propertyPath: m_text
+      value: Voltar
+      objectReference: {fileID: 0}
     - target: {fileID: 2183519425195876184, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -665,6 +751,10 @@ PrefabInstance:
     - target: {fileID: 4913818702342964836, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975087630820807438, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5732251452816192507, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -831,6 +921,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5153270762978559219, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
   m_PrefabInstance: {fileID: 3895784985882289923}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &7682686161863097561 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6977669636130509197, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
+  m_PrefabInstance: {fileID: 3895784985882289923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8637025075750678230 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6670037648098323999, guid: fd88609f4f3f2804496ff7ace124112f, type: 3}
@@ -847,6 +942,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1959728052}
+  - {fileID: 1174314398}
   - {fileID: 465729180}
   - {fileID: 742330005}
   - {fileID: 1447910418}

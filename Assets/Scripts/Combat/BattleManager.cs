@@ -26,18 +26,57 @@ public class BattleManager : MonoBehaviour
     public BattleState state;
     public enum BattleState { START, PLAYERTURN, ENEMYTURN, WON, LOST }
 
-    void Start()
+    [Header("Dados para Teste")]
+    public bool usarDadosDeTeste = true;
+    public CreatureData playerDataTeste;
+    public CreatureData enemyDataTeste;
+
+    IEnumerator Start()
     {
+        yield return null;
+
         state = BattleState.START;
         StartCoroutine(SetupBattle());
     }
 
     IEnumerator SetupBattle()
     {
-        // --- ETAPA 1: LER OS DADOS DO GAMEMANAGER ---
-        // Pega os "moldes" (ScriptableObjects) que o GameManager transportou
-        CreatureData playerData = GameManager.Instance.playerCreatureData;
-        CreatureData enemyData = GameManager.Instance.enemyCreatureData;
+        CreatureData playerData;
+        CreatureData enemyData;
+
+        // --- ETAPA 1: LER OS DADOS DO GAMEMANAGER OU USAR DADOS DE TESTE ---
+        if (usarDadosDeTeste)
+        {
+            // Usa os dados configurados no Inspector para testes
+            playerData = playerDataTeste;
+            enemyData = enemyDataTeste;
+            
+            if (playerData == null || enemyData == null)
+            {
+                Debug.LogError("Configure os dados de teste (playerDataTeste e enemyDataTeste) no Inspector do BattleManager!");
+                yield break;
+            }
+        }
+        else
+        {
+            // Verifica se o GameManager existe
+            if (GameManager.Instance == null)
+            {
+                Debug.LogError("GameManager não encontrado! Certifique-se que existe um GameManager na cena.");
+                yield break;
+            }
+
+            // Pega os "moldes" (ScriptableObjects) que o GameManager transportou
+            playerData = GameManager.Instance.playerCreatureData;
+            enemyData = GameManager.Instance.enemyCreatureData;
+
+            // Verifica se os dados das criaturas existem
+            if (playerData == null || enemyData == null)
+            {
+                Debug.LogError("Dados das criaturas não foram configurados no GameManager!");
+                yield break;
+            }
+        }
 
         // --- ETAPA 2: INSTANCIAR (CRIAR) OS VISUAIS ---
         // Cria os prefabs visuais nos locais de spawn
