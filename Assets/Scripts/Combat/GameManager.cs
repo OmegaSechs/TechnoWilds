@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
-    // ScriptableObjects de quem vai lutar
     public CreatureData playerCreatureData;
     public CreatureData enemyCreatureData;
 

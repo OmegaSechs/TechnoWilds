@@ -8,6 +8,7 @@ public string Name { get; protected set; }
     public int MaxSP { get; protected set; }
     public int Level { get; protected set; }
     public int Attack { get; protected set; } 
+    public int Defense { get; protected set; }
     private int currentHP;
     private int currentSP;
 
@@ -17,12 +18,13 @@ public string Name { get; protected set; }
 
     public List<AttackData> Attacks { get; protected set; }
 
-    public Creature(string name, int hp, int sp, int attack, int level)
+    public Creature(string name, int hp, int sp, int attack, int defense, int level)
     {
         Name = name;
         MaxHP = hp;
         MaxSP = sp;
         Attack = attack;
+        Defense = defense;
         Level = level;
         currentHP = hp; 
         currentSP = sp;
@@ -43,6 +45,6 @@ public virtual void AttackTarget(Creature target, AttackData attack)
     }
     public virtual void TakeDamage(int damage)
     {
-        currentHP = Mathf.Max(0, currentHP - damage);
+        currentHP = Mathf.Max(0, currentHP - (damage - Defense));
     }
 }

@@ -3,15 +3,12 @@ using UnityEngine.UI;
 using TMPro;
 
 public class BattleHUD : MonoBehaviour
-{
-    // Deixe as referências públicas para que possamos arrastá-las no Inspector
-    
+{    
     public TextMeshProUGUI nomeTexto;
     public TextMeshProUGUI nivelTexto;
     public Slider hpSlider;
     public Slider spSlider; 
 
-    // Este método é chamado no início da batalha para configurar o HUD
     public void SetHUD(Creature creature)
     {
         

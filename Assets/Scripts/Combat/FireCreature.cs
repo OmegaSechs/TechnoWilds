@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FireCreature : Creature
 {
-     public FireCreature(string name, int maxHp, int maxSp, int attack, int level, List<AttackData> attacks) : base(name, maxHp, maxSp, attack, level)
+     public FireCreature(string name, int maxHp, int maxSp, int attack, int defense, int level, List<AttackData> attacks) : base(name, maxHp, maxSp, attack, defense, level)
         {
             this.Attacks = attacks;
     }
