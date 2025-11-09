@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: eb8babb5281a03d4b957c7a597d23e98
+guid: 9aa41c052e8a08c4baab73ac3727ae9e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8115454678589741361
-    second: Barra_vazia_0
+      213: -6830513396094243149
+    second: MenuImg_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Barra_vazia_0
+      name: MenuImg_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 154
-        width: 595
-        height: 93
+        x: 0
+        y: 0
+        width: 1536
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1399f1c5803ef9070800000000000000
-      internalID: 8115454678589741361
+      spriteID: 3be614081442531a0800000000000000
+      internalID: -6830513396094243149
       vertices: []
       indices: 
       edges: []
@@ -148,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Barra_vazia_0: 8115454678589741361
+      MenuImg_0: -6830513396094243149
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

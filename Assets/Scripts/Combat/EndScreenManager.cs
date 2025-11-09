@@ -10,6 +10,6 @@ public class EndScreenManager : MonoBehaviour
 
     public void GoToMenu()
     {
-        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
 }
