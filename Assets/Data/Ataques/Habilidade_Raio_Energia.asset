@@ -19,3 +19,4 @@ MonoBehaviour:
   spCost: 10
   attackSound: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}
   attackType: {fileID: 11400000, guid: 9f088dd365af79e488444d19ef231386, type: 2}
+  attackAnimationPrefab: {fileID: 6468665808429235378, guid: deed2c803590f2d4aab5f4ca0dafece3, type: 3}

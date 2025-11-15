@@ -11,4 +11,7 @@ public class AttackData : ScriptableObject
     public AudioClip attackSound;
 
     public ElementType attackType;
+
+    [Header("Efeitos Visuais")]
+    public GameObject attackAnimationPrefab;
 }

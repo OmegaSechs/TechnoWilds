@@ -126,6 +126,11 @@ public class BattleManager : MonoBehaviour
             yield break;
         }
 
+        if (selectedAttack.attackAnimationPrefab != null && enemyPrefabInstance != null)
+        {
+            Instantiate(selectedAttack.attackAnimationPrefab, enemyPrefabInstance.transform.position, Quaternion.identity);
+        }
+
         if (audioManager != null)
         {
             audioManager.PlaySFX(selectedAttack.attackSound);
@@ -174,6 +179,10 @@ public class BattleManager : MonoBehaviour
 
             if (enemyCreature.CurrentSP >= enemyAttack.spCost)
             {
+                if (enemyAttack.attackAnimationPrefab != null && playerPrefabInstance != null)
+                {
+                    Instantiate(enemyAttack.attackAnimationPrefab, playerPrefabInstance.transform.position, Quaternion.identity);
+                }
                 if (audioManager != null)
                 {
                     audioManager.PlaySFX(enemyAttack.attackSound);
