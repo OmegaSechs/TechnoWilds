@@ -16,7 +16,7 @@ MonoBehaviour:
   creatureInfo: Um sapo com tecnologia Steampunk
   creatureType: {fileID: 11400000, guid: c39e7b89877109b47b74edb6ef0f3b2d, type: 2}
   battlePrefab: {fileID: 6826038957812082882, guid: 813f54c0899a9ec4aa5facd446f62611, type: 3}
-  maxHealth: 100
+  maxHealth: 200
   maxSP: 30
   baseAttack: 20
   baseDefense: 5

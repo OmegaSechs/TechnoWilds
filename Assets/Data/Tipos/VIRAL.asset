@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 371a971a0e0953a46b13a5511a38114f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8dfe7ba44d8408c41835710b7369fe97, type: 3}
   m_Name: VIRAL
   m_EditorClassIdentifier: Assembly-CSharp::ElementType
-  typeName: VIRAL
+  typeName: 
   weaknesses:
-  - {fileID: 11400000, guid: 110cd5c7cc977db4d95dac4de8a18fa3, type: 2}
-  resistances:
-  - {fileID: 11400000, guid: 7cef3187506e035488fd3b38893e07d6, type: 2}
   - {fileID: 11400000, guid: 9f088dd365af79e488444d19ef231386, type: 2}
+  resistances:
+  - {fileID: 11400000, guid: 110cd5c7cc977db4d95dac4de8a18fa3, type: 2}
+  - {fileID: 11400000, guid: 7cef3187506e035488fd3b38893e07d6, type: 2}

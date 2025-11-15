@@ -9,4 +9,6 @@ public class AttackData : ScriptableObject
     public int damage;
     public int spCost;
     public AudioClip attackSound;
+
+    public ElementType attackType;
 }

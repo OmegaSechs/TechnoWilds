@@ -16,7 +16,7 @@ MonoBehaviour:
   creatureInfo: Cachorro caramelo
   creatureType: {fileID: 11400000, guid: 9f088dd365af79e488444d19ef231386, type: 2}
   battlePrefab: {fileID: 171194131123673357, guid: 1abe77e6bacc470419af1af6cde0e088, type: 3}
-  maxHealth: 800
+  maxHealth: 180
   maxSP: 25
   baseAttack: 12
   baseDefense: 6

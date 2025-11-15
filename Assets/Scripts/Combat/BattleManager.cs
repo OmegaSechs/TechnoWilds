@@ -81,8 +81,8 @@ public class BattleManager : MonoBehaviour
             enemyPrefabInstance = Instantiate(enemyData.battlePrefab, enemySpawnPoint);
         }
 
-        playerCreature = new FireCreature(playerData.creatureName, playerData.maxHealth, playerData.maxSP, playerData.baseAttack, playerData.baseDefense, playerData.baseLevel, playerData.attacks);
-        enemyCreature = new FireCreature(enemyData.creatureName, enemyData.maxHealth, enemyData.maxSP, enemyData.baseAttack, enemyData.baseDefense, enemyData.baseLevel, enemyData.attacks);
+        playerCreature = new NeuralCreature(playerData.creatureName, playerData.maxHealth, playerData.maxSP, playerData.baseAttack, playerData.baseDefense, playerData.baseLevel, playerData.creatureType, playerData.attacks);
+        enemyCreature = new NeuralCreature(enemyData.creatureName, enemyData.maxHealth, enemyData.maxSP, enemyData.baseAttack, enemyData.baseDefense, enemyData.baseLevel, enemyData.creatureType, enemyData.attacks);
 
         logTexto.text = $"Um {enemyCreature.Name} selvagem apareceu!";
 

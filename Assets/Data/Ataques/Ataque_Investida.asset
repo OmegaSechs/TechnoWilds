@@ -17,3 +17,4 @@ MonoBehaviour:
   damage: 10
   spCost: 0
   attackSound: {fileID: 8300000, guid: faf53b5b59d41a14e97c8858f4664122, type: 3}
+  attackType: {fileID: 11400000, guid: 2583517bd37298340a5a02d5b976027f, type: 2}

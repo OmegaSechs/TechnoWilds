@@ -16,3 +16,5 @@ MonoBehaviour:
   description: Teste
   damage: 2000
   spCost: 1
+  attackSound: {fileID: 0}
+  attackType: {fileID: 11400000, guid: e32a90ee5ff18cd4a98f80559013b9bb, type: 2}
