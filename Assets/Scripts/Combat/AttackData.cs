@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 [CreateAssetMenu(fileName = "New Attack Data", menuName = "Combat/Attack Data")]
 public class AttackData : ScriptableObject
 {
@@ -9,4 +8,5 @@ public class AttackData : ScriptableObject
 
     public int damage;
     public int spCost;
+    public AudioClip attackSound;
 }

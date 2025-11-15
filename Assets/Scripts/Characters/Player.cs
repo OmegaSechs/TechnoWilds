@@ -4,7 +4,6 @@ using UnityEngine;
 public class Player : Character
 {
     private PlayerInputHandler inputHandler;
-
     protected override void Awake()
     {
         base.Awake();

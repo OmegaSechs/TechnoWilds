@@ -16,3 +16,4 @@ MonoBehaviour:
   description: Uma forte investida contra o oponente
   damage: 10
   spCost: 0
+  attackSound: {fileID: 8300000, guid: faf53b5b59d41a14e97c8858f4664122, type: 3}

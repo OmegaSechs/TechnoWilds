@@ -17,3 +17,4 @@ MonoBehaviour:
     dano elevado ao advers\xE1rio."
   damage: 25
   spCost: 10
+  attackSound: {fileID: 8300000, guid: ab297b593498a6e47ba84de770477cbe, type: 3}

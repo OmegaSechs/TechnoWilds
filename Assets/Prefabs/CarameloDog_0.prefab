@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1987255647211861796}
   - component: {fileID: 8228485751727620363}
+  - component: {fileID: 6651642062238762736}
   m_Layer: 0
   m_Name: CarameloDog_0
   m_TagString: Untagged
@@ -80,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: -3994744024693093290, guid: a81041b8b7f24bc41b858d0bfe679b29, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9803922, b: 0.9803922, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -90,3 +91,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6651642062238762736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171194131123673357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41a0282811487a041b033d411f9f9f79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FeedbackDeDano
+  duracaoShake: 0.15
+  intensidadeShake: 0.1
+  duracaoFlash: 0.15
+  flashMaterial: {fileID: 2100000, guid: 2d79ab4c5f67a364088f4d6d7b9a5c51, type: 2}
