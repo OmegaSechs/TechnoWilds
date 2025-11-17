@@ -33,6 +33,13 @@ public abstract class Character : MonoBehaviour
 
     protected virtual void Move()
     {
+        if (Input.GetKey(KeyCode.LeftShift)){
+            moveSpeed =8f;
+        }
+        else
+        {
+            moveSpeed = 5f;
+        };
         rb.linearVelocity = moveInput * moveSpeed;
         if (animator)
             animator.SetFloat("Speed", rb.linearVelocity.magnitude);

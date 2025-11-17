@@ -1,34 +1,40 @@
 fileFormatVersion: 2
-guid: 79deef78e61de6841a7f88bd09f8603e
+guid: 6ffd942c32b167a4dad74c29f0a63dd1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3356593810811537127
-    second: 09_0
+      213: -8038976213705442086
+    second: 30_0
   - first:
-      213: 8189764540814591332
-    second: 09_1
+      213: -5023399773449032848
+    second: 30_1
   - first:
-      213: 4020313350803619168
-    second: 09_2
+      213: 3983093428313328910
+    second: 30_2
   - first:
-      213: 799073080607670626
-    second: 09_3
+      213: 7536408128056096393
+    second: 30_3
   - first:
-      213: 1748543594927815141
-    second: 09_4
+      213: -5277243911555539220
+    second: 30_4
   - first:
-      213: 2308415037690690295
-    second: 09_5
+      213: -5767859178632322494
+    second: 30_5
   - first:
-      213: 2600735624873369648
-    second: 09_6
+      213: -7903347005095843749
+    second: 30_6
   - first:
-      213: 2860556988222471652
-    second: 09_7
+      213: -4985619713051393664
+    second: 30_7
   - first:
-      213: 8514893654395680910
-    second: 09_8
+      213: 3794663918414620205
+    second: 30_8
+  - first:
+      213: -7141869880133607706
+    second: 30_9
+  - first:
+      213: -8885161807705507674
+    second: 30_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -99,7 +105,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -137,199 +143,265 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 09_0
+      name: Investida_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 42
-        width: 11
-        height: 12
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 919bd4b86bbfa61d0800000000000000
-      internalID: -3356593810811537127
+      spriteID: 7c7af397397230e489c7d45f684966ae
+      internalID: 1283475638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 09_1
+      name: Investida_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 40
-        width: 18
-        height: 17
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 46508596573e7a170800000000000000
-      internalID: 8189764540814591332
+      spriteID: 37f9685ee89a66a44bc2df64092bde8c
+      internalID: -225863315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 09_2
+      name: Investida_2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 14
-        width: 16
-        height: 44
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 06df86821b50bc730800000000000000
-      internalID: 4020313350803619168
+      spriteID: 913e3fc21d7d269409bceffc2e6831f0
+      internalID: 1574482278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 09_3
+      name: Investida_3
       rect:
         serializedVersion: 2
-        x: 74
-        y: 43
-        width: 12
-        height: 12
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 261823fabb0e61b00800000000000000
-      internalID: 799073080607670626
+      spriteID: 1a3044d6ef0da3247a06e2f9ba20937a
+      internalID: -1706939781
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 09_4
+      name: Investida_4
       rect:
         serializedVersion: 2
-        x: 100
-        y: 38
-        width: 18
-        height: 20
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5e9f4f9a223144810800000000000000
-      internalID: 1748543594927815141
+      spriteID: 0baeee3790514d1439ee53c30b53f75f
+      internalID: 1154868366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 09_5
+      name: Investida_5
       rect:
         serializedVersion: 2
-        x: 114
-        y: 50
-        width: 7
-        height: 9
+        x: 160
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7fa39bb0f33290020800000000000000
-      internalID: 2308415037690690295
+      spriteID: adf4e25824e7f774fbbe61ebf955fa4b
+      internalID: 800463612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 09_6
+      name: Investida_6
       rect:
         serializedVersion: 2
-        x: 133
-        y: 37
-        width: 20
-        height: 22
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 030e743854ba71420800000000000000
-      internalID: 2600735624873369648
+      spriteID: e47fd0067ad4006439d18cc94845b591
+      internalID: 32472882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 09_7
+      name: Investida_7
       rect:
         serializedVersion: 2
-        x: 165
-        y: 36
-        width: 21
-        height: 24
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4edf2c6cc6db2b720800000000000000
-      internalID: 2860556988222471652
+      spriteID: d662242eb0293e9439b80626b01de5c5
+      internalID: 792888958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 09_8
+      name: Investida_8
       rect:
         serializedVersion: 2
-        x: 5
-        y: 4
-        width: 45
-        height: 24
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e887b723aaafa2670800000000000000
-      internalID: 8514893654395680910
+      spriteID: 1311f5c354dc8f149ac9d24ca76f1aae
+      internalID: -889398841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Investida_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543e477210047d943b8f3983470587af
+      internalID: 828674019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Investida_10
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06dc4f596de2ac4c8a5382209e18581
+      internalID: 98002636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Investida_11
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b3d58aad2bf5d4eb374ec3bd18c294
+      internalID: 530096214
       vertices: []
       indices: 
       edges: []
@@ -338,7 +410,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: efc38f626ad664f498e8460aea1bf2e6
     internalID: 0
     vertices: []
     indices: 
@@ -346,17 +418,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      09_0: -3356593810811537127
-      09_1: 8189764540814591332
-      09_2: 4020313350803619168
-      09_3: 799073080607670626
-      09_4: 1748543594927815141
-      09_5: 2308415037690690295
-      09_6: 2600735624873369648
-      09_7: 2860556988222471652
-      09_8: 8514893654395680910
+      Investida_0: 1283475638
+      Investida_1: -225863315
+      Investida_10: 98002636
+      Investida_11: 530096214
+      Investida_2: 1574482278
+      Investida_3: -1706939781
+      Investida_4: 1154868366
+      Investida_5: 800463612
+      Investida_6: 32472882
+      Investida_7: 792888958
+      Investida_8: -889398841
+      Investida_9: 828674019
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

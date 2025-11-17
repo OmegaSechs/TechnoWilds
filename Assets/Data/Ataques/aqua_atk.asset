@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b020b53658362234d9e814795f818f6f, type: 3}
-  m_Name: Ataque_Investida
+  m_Name: aqua_atk
   m_EditorClassIdentifier: Assembly-CSharp::AttackData
-  attackName: Investida
-  description: Uma forte investida contra o oponente
-  damage: 10
-  spCost: 0
-  attackSound: {fileID: 8300000, guid: faf53b5b59d41a14e97c8858f4664122, type: 3}
-  attackType: {fileID: 11400000, guid: 2583517bd37298340a5a02d5b976027f, type: 2}
-  attackAnimationPrefab: {fileID: 3213703658170691987, guid: 5d9c1af69f0be8b498422fb99f1081b0, type: 3}
+  attackName: Aqua Slash
+  description: "Ataque de \xE1gua"
+  damage: 32
+  spCost: 11
+  attackSound: {fileID: 8300000, guid: 60f9efe3d97bc8f47bea1af7f7093d41, type: 3}
+  attackType: {fileID: 11400000, guid: 7cef3187506e035488fd3b38893e07d6, type: 2}
+  attackAnimationPrefab: {fileID: 7519303919931595445, guid: 68b3107e2deddd5439e0c342965c54f2, type: 3}

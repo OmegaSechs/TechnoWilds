@@ -20,7 +20,7 @@ MonoBehaviour:
   maxSP: 25
   baseAttack: 12
   baseDefense: 6
-  baseLevel: 0
+  baseLevel: 6
   attacks:
   - {fileID: 11400000, guid: b65914f725b5e294f9a9177062c4808c, type: 2}
   - {fileID: 11400000, guid: 90053b696de189c4f9c27ce3c0f8f46d, type: 2}

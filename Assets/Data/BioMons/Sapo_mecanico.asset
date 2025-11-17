@@ -17,9 +17,10 @@ MonoBehaviour:
   creatureType: {fileID: 11400000, guid: c39e7b89877109b47b74edb6ef0f3b2d, type: 2}
   battlePrefab: {fileID: 6826038957812082882, guid: 813f54c0899a9ec4aa5facd446f62611, type: 3}
   maxHealth: 200
-  maxSP: 30
+  maxSP: 35
   baseAttack: 20
   baseDefense: 5
-  baseLevel: 0
+  baseLevel: 8
   attacks:
   - {fileID: 11400000, guid: b65914f725b5e294f9a9177062c4808c, type: 2}
+  - {fileID: 11400000, guid: 47776e35ab7ffad419cfd45b7654710f, type: 2}
