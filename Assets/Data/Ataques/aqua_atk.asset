@@ -16,6 +16,6 @@ MonoBehaviour:
   description: "Ataque de \xE1gua"
   damage: 32
   spCost: 11
-  attackSound: {fileID: 8300000, guid: 60f9efe3d97bc8f47bea1af7f7093d41, type: 3}
+  attackSound: {fileID: 8300000, guid: 8ff2a2d7e79f81c40ac447512f879374, type: 3}
   attackType: {fileID: 11400000, guid: 7cef3187506e035488fd3b38893e07d6, type: 2}
   attackAnimationPrefab: {fileID: 7519303919931595445, guid: 68b3107e2deddd5439e0c342965c54f2, type: 3}
