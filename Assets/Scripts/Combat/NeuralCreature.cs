@@ -11,7 +11,7 @@ public class NeuralCreature : Creature
 
      public override void TakeDamage(AttackData attack, Creature attacker)
      {
-         Debug.Log("Esta é a lógica de dano ESPECIAL do FireCreature/NeuralCreature!");
+         Debug.Log("Esta é a lógica de dano ESPECIAL do NeuralCreature!");
          
          if (attack.attackType.typeName == "Viral" && Random.Range(0, 2) == 0) 
          {

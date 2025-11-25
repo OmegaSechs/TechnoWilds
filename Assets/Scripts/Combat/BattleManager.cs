@@ -81,8 +81,18 @@ public class BattleManager : MonoBehaviour
             enemyPrefabInstance = Instantiate(enemyData.battlePrefab, enemySpawnPoint);
         }
 
+
+        if (playerData.creatureType.typeName == "Neural") {
         playerCreature = new NeuralCreature(playerData.creatureName, playerData.maxHealth, playerData.maxSP, playerData.baseAttack, playerData.baseDefense, playerData.baseLevel, playerData.creatureType, playerData.attacks);
+        } else {
+        playerCreature = new defaultCreature(playerData.creatureName, playerData.maxHealth, playerData.maxSP, playerData.baseAttack, playerData.baseDefense, playerData.baseLevel, playerData.creatureType, playerData.attacks);
+        }
+        if (enemyData.creatureType.typeName == "Neural") {
         enemyCreature = new NeuralCreature(enemyData.creatureName, enemyData.maxHealth, enemyData.maxSP, enemyData.baseAttack, enemyData.baseDefense, enemyData.baseLevel, enemyData.creatureType, enemyData.attacks);
+        } else {
+        enemyCreature = new defaultCreature(enemyData.creatureName, enemyData.maxHealth, enemyData.maxSP, enemyData.baseAttack, enemyData.baseDefense, enemyData.baseLevel, enemyData.creatureType, enemyData.attacks);
+        }
+
 
         logTexto.text = $"Um {enemyCreature.Name} selvagem apareceu!";
 
